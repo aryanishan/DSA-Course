@@ -13,5 +13,15 @@ int main(){
   q.pop();
   cout<<"Now after removing one element, the size of the queue is : "<<q.size()<<endl;
 
+  if(q.empty()){
+    cout<<"Queue is empty"<<endl;
+  }else{
+    cout<<"Queue is not empty"<<endl;
+  }
+
+  cout<<"Front element of the queue is : "<<q.front()<<endl;
+  cout<<"Back element of the queue is : "<<q.back()<<endl;
+
+
   return 0;
 }
