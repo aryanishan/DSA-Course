@@ -17,7 +17,7 @@ class CirQueue{
   }
 
   void push(int data){
-    if((front == 0 && rear == size - 1) || (front == rear + 1)){
+    if((front == 0 && rear == size - 1) || (front == rear + 1)){ // (rear == (front - 1) % (sizes - 1)) This condition can also be used.
       cout<<"Queue is full."<<endl;
     }
     else if(front == -1){
