@@ -27,31 +27,34 @@ Node* buildTree(){
     return root;
   }
 }
-
+int maxD = 0;
 int maxDepth(Node* root){
   if(root == NULL){
     return 0;
   }
 
-  int leftH = maxDepth(root -> left) + 1;
-  int rightH = maxDepth(root -> right) + 1;
-  int ans = max(leftH, rightH);
+  int leftH = maxDepth(root -> left);
+  int rightH = maxDepth(root -> right);
+  maxD = max(maxD, leftH + rightH);
 
-  return ans;
+  return max(rightH, leftH) + 1;
 }
 
 int diameterOfTree(Node* root){
-  if(root == NULL){
-    return 0;
-  }
+  // if(root == NULL){
+  //   return 0;
+  // }
 
-  int n1 = maxDepth(root -> left) + maxDepth(root -> right);
-  int n2 = diameterOfTree(root -> left);
-  int n3 = diameterOfTree(root -> right);
+  // int n1 = maxDepth(root -> left) + maxDepth(root -> right);
+  // int n2 = diameterOfTree(root -> left);
+  // int n3 = diameterOfTree(root -> right);
 
-  int ans = max(n1, max(n2, n3));
+  // int ans = max(n1, max(n2, n3));
 
-  return ans;
+  // return ans;
+
+  maxDepth(root);
+  return maxD;
 }
 
 int main(){
