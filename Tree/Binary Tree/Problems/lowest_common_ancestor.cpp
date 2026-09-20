@@ -61,7 +61,7 @@ int main(){
   Node* ans = lca(root, p, q);
 
   if(ans == NULL){
-    cout<<"Invalid, there is no descendent node!..."<<endl;
+    cout<<"Invalid, No descendent node found!..."<<endl;
   }else{
     cout<<"LCA is : "<<ans -> data<<endl;
   }
